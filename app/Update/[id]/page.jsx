@@ -1,7 +1,6 @@
 "use client"
-import { categories } from '@/app/Recipes/constants'
 import React, { useState } from 'react'
-
+import {categories} from '../../_constants/constants'
 const page = ({params}) => {
     
     const [itemName,setItemName]=useState('')
