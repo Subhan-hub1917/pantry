@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { items } from '../_constants/constants'
 
 const Allitems = () => {
-  const [del,setDel]=useState(true)
+  const [del,setDel]=useState(false)
   const id=134
   return (
     <>

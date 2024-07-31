@@ -20,36 +20,42 @@ export const items=[
         name:"Milk",
         measure:'Litre',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
     {
         name:"Honey",
         measure:'Litre',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
     {
         name:"jam",
         measure:'Litre',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
     {
         name:"Cold Drink",
         measure:'Litre',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
     {
         name:"Tomatoes",
         measure:'KG',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
     {
         name:"Potatoes",
         measure:'KG',
         unit:"2",
+        category:'Berverage',
         expires:"2/9/24"
     },
 ]
