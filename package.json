@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@huggingface/inference": "^2.8.0",
+    "bootstrap-icons": "^1.11.3",
+    "framer-motion": "^11.3.19",
+    "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-multi-carousel": "^2.8.5"
   },
   "devDependencies": {
     "postcss": "^8",
