@@ -4,7 +4,7 @@ import { navItems } from '../_constants/constants'
 
 const Lowbar = () => {
   return (
-    <section className='rounded-t-xl select-none lg:hidden fixed bottom-0 px-5 w-screen  bg-blue-950 text-white flex justify-between '>
+    <section className='rounded-t-3xl  select-none lg:hidden fixed bottom-0 px-5 w-screen  bg-blue-950 text-white flex justify-between '>
         {
           navItems.map((item)=>(
             <Link href={item.link}>

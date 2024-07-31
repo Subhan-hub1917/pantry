@@ -6,12 +6,12 @@ import { items } from '../_constants/constants'
 const Allitems = () => {
   const [del,setDel]=useState(false)
   const id=134
+  
   return (
     <>
-  
     {
       items.map((item)=>(
-        <div key={item.name} className="hover:scale-105 hover:shadow-2xl shadow-blue-950 transition-all ease-in-out text-blue-950 hover:bg-blue-950 hover:text-white h-40 select-none w-40 lg:h-60 lg:w-60 mx-3 my-3 flex flex-col justify-between text-center border border-blue-950 rounded-lg">
+        <div key={item.name} className="hover:scale-105 hover:shadow-2xl shadow-blue-950 transition-all ease-in-out text-blue-950 hover:bg-blue-950 hover:text-white h-56 select-none w-56 lg:h-60 lg:w-60 mx-3 my-2 flex flex-col justify-between text-center border border-blue-950 rounded-lg">
             <div className="flex text-md lg:text-lg justify-between px-4 py-2 font-medium">
               <div className='flex'>
                 <h1 className=''>{item.unit}-</h1><h1>{item.measure}</h1>
