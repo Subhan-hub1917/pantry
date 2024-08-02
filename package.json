@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^5.2.12",
     "@huggingface/inference": "^2.8.0",
     "bootstrap-icons": "^1.11.3",
+    "firebase": "^10.12.5",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
     "prop-types": "^15.8.1",
