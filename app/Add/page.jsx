@@ -9,15 +9,22 @@ const page = () => {
   const [itemMeasure,setItemMeasure]=useState('')
   const [itemQuantity,setItemQuantity]=useState(1)
   const [itemExpires,setItemExpires]=useState('')
+  const [itemImage,setItemImage]=useState()
+  const [itemImageURL, setItemImageURL] = useState('')
 
   const handleAddItem=()=>{
     alert(itemExpires)
   }
+const handleImage=(e)=>{
+  const file=e.target.files[0]
+  setItemImage(file)
+  setItemImageURL(URL.createObjectURL(file))
+}
 
   return (
     <section className="w-80 my-10 lg:my-0 space-y-5 p-3 text-center rounded-lg bg-blue-950 text-white select-none">
       <h1 className="text-2xl font-bold">Add Item</h1>
-      <input onChange={(e)=>setItemName(e.target.value)} value={itemName} className="text-2xl font-bold text-blue-950 py-4 rounded-lg px-3 w-full" placeholder="Name"/>
+      <input onChange={(e)=>setItemName(e.target.value)} value={itemName} className="text-2xl font-bold text-blue-950 py-2 rounded-lg px-3 w-full" placeholder="Name"/>
       <select onChange={(e)=>setItemCategory(e.target.value)}  className='text-2xl  py-1 rounded-lg px-3 w-full ring-2 ring-inset ring-slate-600 focus:inset-5 text-blue-950  focus:ring-slate-600 border-white'>
         <option value="" className=''>Select a category</option>
           {
@@ -45,9 +52,17 @@ const page = () => {
           value={itemExpires}
           className="w-full mt-2 px-3 py-2 rounded-lg text-blue-950"
         />
-
-
       </div>
+      {!itemImage && <div className="flex items-center text-lg font-bold px-3 text-left">
+        Image:
+        <input
+          type="file"
+          onChange={(e) => handleImage(e)}
+          placeholder='Upload Image'
+          className="w-full mt-2 px-3  rounded-lg text-blue-950"
+        />
+      </div>}
+      {itemImage && <img src={itemImageURL} className='w-20 h-20 object-cover'/>}
       <button onClick={()=>handleAddItem()} className="py-3 px-5 rounded-md bg-green-700">Add</button>
     </section>
   )

@@ -2,11 +2,58 @@
 import Carousel from "react-multi-carousel";
 import 'react-multi-carousel/lib/styles.css'; 
 import Allitems from "./_components/Allitems";
-import { categories, items } from "./_constants/constants";
-import { useState } from "react";
+import { categories } from "./_constants/constants";
+import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
 
 export default function Home() {
+  const {isSignedIn,user}=useAuth()
+  const [userEmail,setUserEmail]=useState('')
   const [filter,setFilter]=useState('All')
+  const [items,setItems]=useState([
+    {
+      name:"Milk",
+      measure:'Litre',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  },
+  {
+      name:"Honey",
+      measure:'Litre',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  },
+  {
+      name:"jam",
+      measure:'Litre',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  },
+  {
+      name:"Cold Drink",
+      measure:'Litre',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  },
+  {
+      name:"Tomatoes",
+      measure:'KG',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  },
+  {
+      name:"Potatoes",
+      measure:'KG',
+      unit:"2",
+      category:'Berverage',
+      expires:"2/9/24"
+  }
+  ])
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -26,19 +73,19 @@ const responsive = {
     items: 3
   }
 };
-
-  const handleFilter=()=>{
-  
-  }
-
+  useEffect(()=>{
+    if(isSignedIn && user){
+      setUserEmail(user.primaryEmailAddress.emailAddress)
+    }
+  },[isSignedIn,user])
 
   return (
     <>
-      <section className="absolute px-2 lg:px-0 md:h-5 top-0 lg:w-2/3 w-screen lg:left-68 text-white bg-blue-950">
+      <section className="absolute  rounded-b-2xl px-2 lg:px-0 md:h-5 top-0 lg:w-2/3 w-screen lg:left-68 text-white bg-blue-950">
       <Carousel 
         responsive={responsive}
         arrows={false}
-        className="bg-blue-950 px-3"
+        className="bg-blue-950 px-3 rounded-b-2xl"
       >
         {
           categories.map((item)=>(
@@ -48,7 +95,7 @@ const responsive = {
         </Carousel>
         </section>
     
-    <Allitems/>
+    <Allitems items={items} filter={filter}/>
     </>
     
   );

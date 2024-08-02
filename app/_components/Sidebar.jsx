@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { navItems } from '../_constants/constants'
+import { UserButton } from '@clerk/nextjs'
 
 const Sidebar = () => {
   return (
@@ -11,7 +12,7 @@ const Sidebar = () => {
             <Link href={`${item.link}`}><div className='text-lg font-semibold py-3 px-3 cursor-pointer  hover:bg-white hover:text-blue-950 rounded-xl mx-1' key={item.name}><i className={`bi bi-${item.icon}`}></i> {item.name}</div></Link>
           ))
         }
-        <div className=' text-lg font-semibold flex items-center justify-between mt-24 mb-4 py-3 px-4 cursor-pointer  hover:bg-white hover:text-blue-950 rounded-xl mx-1 '>Profile <i className='text-2xl bi bi-person-circle'></i></div>
+        <div className=' text-lg font-semibold flex items-center justify-between mt-24 mb-4 py-3 px-4 cursor-pointer  hover:bg-white hover:text-blue-950 rounded-xl mx-1 '>Profile <UserButton/> </div>
     </section>
   )
 }

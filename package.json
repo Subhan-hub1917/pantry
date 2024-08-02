@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.2.12",
     "@huggingface/inference": "^2.8.0",
     "bootstrap-icons": "^1.11.3",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
+    "prop-types": "^15.8.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-lottie": "^1.2.4",
     "react-multi-carousel": "^2.8.5"
   },
   "devDependencies": {
