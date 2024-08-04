@@ -5,8 +5,8 @@ import { SignInButton, SignUpButton } from '@clerk/nextjs'
 
 const Authentication = () => {
   return (
-    <section className='flex flex-col  text-center items-center  bg-slate-500 justify-center h-screen'>
-        <div className='w-screen md:w-1/2 flex flex-col  bg-slate-500 text-center items-center justify-center h-screen'>
+    <section className='flex flex-col  text-center items-center justify-center h-screen'>
+        <div className='w-screen md:w-1/2 flex flex-col  text-center items-center justify-center h-screen'>
           <h1 className='text-3xl lg:text-4xl font-bold pb-5'>Authentication</h1>
           <div className='w-64'>
             <AuthenticationAnimation/>
