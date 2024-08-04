@@ -2,9 +2,10 @@
 import { useEffect } from 'react';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+// Import the functions you need from the SDKs you need
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";// Your web app's Firebase configuration
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_api_Key,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_authDomain,
@@ -16,20 +17,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-let analytics;
-let db;
-const initializeFirebase = () => {
-  const app = initializeApp(firebaseConfig);
-  if (typeof window !== "undefined") {
-    analytics = getAnalytics(app);
-  }
-  db = getFirestore(app);
-};
 
-export const useFirebase = () => {
-  useEffect(() => {
-    initializeFirebase();
-  }, []);
-
-  return { db, analytics };
-};
+const app = initializeApp(firebaseConfig);
+export const analytics =getAnalytics(app)
+export const db=getFirestore(app);
+export const storage=getStorage(app);

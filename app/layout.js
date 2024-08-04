@@ -10,6 +10,7 @@ import {
   SignedIn,
   SignedOut,
 } from '@clerk/nextjs'
+import { MyProvider } from "./_components/Context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,8 @@ export const metadata = {
 const auth=true
 export default function RootLayout({ children }) {
   return (
+    <MyProvider>
+
   <ClerkProvider>
     <html lang="en">
       <body className={inter.className}>
@@ -27,7 +30,6 @@ export default function RootLayout({ children }) {
           <Authentication/>
         </SignedOut>
        <SignedIn>
-
        <div className="overflow-hidden lg:flex items-center h-screen w-screen">
           <Sidebar/>
           <main className=" h-full lg:h-screen w-screen flex flex-wrap items-center justify-center space-y-8  p-8 pb-16 lg:pb-0 overflow-x-hidden">
@@ -40,5 +42,6 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   </ClerkProvider>
+    </MyProvider>
   );
 }
