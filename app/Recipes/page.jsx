@@ -11,25 +11,18 @@ const Page = () => {
     try {
       setLoading(true);
 
-      const requestBody = {
-        model: "meta-llama/llama-3.1-8b-instruct:free",
-        messages: [
-          {
-            role: "user",
-            content: `Provide me recipes based on these items: ${items.length > 0 ? JSON.stringify(items) : 'Your pantry might be empty. Please add items to the pantry.'}`
-          }
-        ],
-      };
-
-      console.log('Request Body:', requestBody); // Debugging: Log the request body
-
       const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(requestBody)
+        body: JSON.stringify({
+          "model": "meta-llama/llama-3.1-405b",
+          "messages": [
+            {"role": "user", "content": `Provide me the recipes of the these Items${JSON.stringify(items)}.If Items are not Given then Response that Your Pantry Might be Empty.I am Unable to get Response`},
+          ],
+        })
       });
 
       if (!response.ok) {
