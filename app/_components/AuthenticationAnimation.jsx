@@ -14,6 +14,7 @@ const AuthenticationAnimation = () => {
     return ( 
         <div>
             <Lottie options={defaultOptions} />
+            <h1>Empty Pantry or Weak Internet Connection please Wait </h1>
         </div>
      );
 };
